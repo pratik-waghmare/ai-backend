@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { callAgent } from './agent.js';
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,8 @@ app.post('/api/translate', async (req, res) => {
 
         res.status(200).json({ data });
     } catch (err) {
+
+        console.error(err);
         res.status(400).json({ 'message': 'Internal server error' });
     }
 

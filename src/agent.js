@@ -1,4 +1,7 @@
-import { AGENT_PROMPT } from "./constants/prompt";
+import dotenv from 'dotenv';
+dotenv.config();
+
+import { AGENT_PROMPT } from "./constants/prompt.js ";
 import Groq from 'groq-sdk';
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
